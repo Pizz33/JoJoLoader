@@ -8,7 +8,7 @@ Help Redteam members generate Evasive Anti-virus software Trojan
 
 由于近年使用go来开发shellcodeloader越来越普遍，导致杀软对go编译程序静态查杀力度增大，尤其是某数字杀软
 
-对之前的免杀项目千机经过多次优化后，发现效果仍不太理想，决定重构转投入rust的怀抱，因此有了这个项目的诞生
+对之前的go免杀项目千机多次优化后，发现效果仍不太理想，决定重构转投入rust的怀抱，因此有了此项目的诞生！
 
 使用方式
 ---
@@ -42,7 +42,7 @@ Help Redteam members generate Evasive Anti-virus software Trojan
 
 ![image](https://github.com/Pizz33/JoJoLoader/assets/88339946/4ca87739-3dfc-4a07-bda0-0cf5b0c90505)
 
-如果不需要捆绑文件，把改行注释即可
+如果不需要捆绑文件，把对应行注释即可
 
 ![image](https://github.com/Pizz33/JoJoLoader/assets/88339946/7b5b4ed6-5f7f-431c-9502-be82a31dd74b)
 
