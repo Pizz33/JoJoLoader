@@ -10,20 +10,20 @@ Help Redteam members generate Evasive Anti-virus software Trojan
 
 对之前的免杀项目千机经过多次优化尝试，更换不同的编译参数，发现效果仍不太理想，决定重构转投入rust的怀抱，因此有了这个项目的诞生
 
+为了最大化的简便，选择内嵌shellcode而不是远程加载等方式，生成自动替换图标签名
+
 使用方式
 ---
 
-和我之前开发的千机一样，同样是支持一键化生成
-
-为了最大化的简便，选择内嵌shellcode而不是远程加载等方式，目录结构如下
-
-![image](https://github.com/Pizz33/JoJoLoader/assets/88339946/364dd6aa-5883-40c4-b25c-5e2bd4660c63)
+与之前开发的千机一样，同样是支持一键化生成
 
 生成`stageless payload`
 
 ![image](https://github.com/Pizz33/JoJoLoader/assets/88339946/49ddd939-32c3-495f-8ab7-a6f649a3a138)
 
 把 `beacon_x64.bin` （习惯使用4.7以上版本的CS，默认名称即是，其他版本自行改名）放置在当前目录下
+
+![image](https://github.com/Pizz33/JoJoLoader/assets/88339946/294efecb-b0bf-45cc-afac-7a107cac3b14)
 
 点击 `一键生成.bat`，等待免杀木马生成
 
