@@ -1,4 +1,6 @@
+![JoJoLoader](https://github.com/Pizz33/JoJoLoader/assets/88339946/dd259365-7334-43df-aee5-2d53d39c0fa9)
 # JoJoLoader
+
 助力红队成员一键生成免杀木马，使用rust实现 (by_hyyrent)
 
 Help Redteam members generate Evasive Anti-virus software Trojan
@@ -6,7 +8,7 @@ Help Redteam members generate Evasive Anti-virus software Trojan
 开发背景
 ---
 
-由于近年使用go来开发shellcodeloader越来越普遍，导致杀软对go编译程序静态查杀力度增大，尤其是某数字杀软
+由于近年使用go来开发loader越来越普遍，导致杀软对go编译程序静态查杀力度增大，尤其是某数字杀软
 
 对之前的go免杀项目千机多次优化后，发现效果仍不太理想，决定重构转投入rust的怀抱，因此有了此项目的诞生！
 
