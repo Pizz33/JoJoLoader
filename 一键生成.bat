@@ -1,8 +1,6 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-
-
 python encrypt.py
 
 //cargo clean
