@@ -187,3 +187,11 @@ fn get_desktop_path() -> Option<PathBuf> {
 - 仅限用于技术研究和获得正式授权的攻防项目，请使用者遵守《中华人民共和国网络安全法》，切勿用于任何非法活动，若将工具做其他用途，由使用者承担全部法律及连带责任，作者及发布者不承担任何法律及连带责任！
 
 - 使用前先按照文档步骤一步一步来，报错问题自行百度解决，类似issue不予回复，感谢理解！
+
+reference
+---
+代码有借鉴学习以下项目，commit当晚通宵没来得及写，现补上，另外免杀性失效自行修改代码，楼主仅提供一种思路，祝玩得开心♥
+
+https://github.com/joaoviictorti/RustRedOps
+
+https://github.com/xiao-zhu-zhu/RustBypassMap
