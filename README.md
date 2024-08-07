@@ -8,7 +8,7 @@ Help Redteam members generate Evasive Anti-virus software Trojan
 
 更新说明
 ---
-2024/08/04 优化免杀效果：360全家桶✔ 火绒✔ def✔
+2024/08/07 优化免杀效果：360全家桶✔ 火绒✔ def✔
 
 ![image](https://github.com/user-attachments/assets/1708a617-5d70-47d5-8fae-da0b92399f10)
 
