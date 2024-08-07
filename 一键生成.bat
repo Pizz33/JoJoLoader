@@ -22,10 +22,4 @@ copy "%sourceFile%" "%targetFile%"
 
 echo Copied and renamed to: "%targetFile%"
 
-set "pythonScript=output\sigthief.py"
-set "restoreExe=output\360Restore.exe"
-set "outputExe=%targetFile%_sign.exe"
-
-python "%pythonScript%" -t "%targetFile%" -i "%restoreExe%" -o "%outputExe%"
-
 endlocal
